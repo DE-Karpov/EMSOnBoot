@@ -1,0 +1,165 @@
+.mainClass {
+    background: black;
+    padding: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mainClass form {
+    height: 80%;
+    width: 25%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    padding-bottom: 3%;
+    padding-left: 10px;
+    border: 10px double #f0dd24;
+}
+
+.mainClass input {
+    border: 2px #f0dd24;
+    height: 20%;
+    width: 100%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin-bottom: 3%;
+    background-color: black;
+}
+
+.EmailInput {
+    font-family: 'Montserrat', sans-serif;
+    color: lightgray;
+    font-size: 15px;
+}
+
+.PasswordInput {
+    font-family: 'Montserrat', sans-serif;
+    color: lightgray;
+    font-size: 15px;
+}
+
+.NameInput {
+    font-family: 'Montserrat', sans-serif;
+    color: lightgray;
+    font-size: 15px;
+}
+.GenderCheck{
+    font-family: 'Montserrat', sans-serif;
+    color: lightgray;
+    font-size: 15px;
+    padding-top: 1px;
+}
+
+.AgeInput{
+    font-family: 'Montserrat', sans-serif;
+    color: lightgray;
+    font-size: 15px;
+}
+
+.mainClass button {
+    background-color: black;
+    color: white;
+    border-color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    width: 50%;
+    height: 10%;
+    margin-left: 25%;
+}
+
+button:hover, button:focus {
+    animation: linear 1.2s light infinite;
+}
+
+@keyframes light {
+
+    50% {
+        color: #fff;
+        text-shadow: 0px -1px 0px #444, 0px 0px 5px #ffd, 0px 0px 8px #fff;
+    }
+    100% {
+        color: #ddd;
+        text-shadow: 0px -1px 0px #000;
+    }
+}
+
+#fotter {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    font-family: 'Montserrat', sans-serif;
+    color: #696969;
+    font-size: 9px
+
+}
+
+#box {
+    background: black;
+    font-family: 'Montserrat', sans-serif;
+    outline: 15px solid #f0dd24;
+    padding: auto;
+    overflow: hidden;
+    position: absolute;
+}
+
+.WelcomeText {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+
+#EMS {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 20%;
+    animation: linear 1.2s light infinite;
+    font-family: 'Montserrat', sans-serif;
+
+}
+a{
+    padding-top: 5%;
+}
+a:hover, a:focus {
+    animation: linear 1.2s light infinite;
+}
+.WritingTextInMainPage{
+
+    color: #C0C0C0;
+    text-align: center;
+    padding-top: 5%;
+
+}
+.wave {
+    color: #C0C0C0;
+    animation: 0.5s color infinite;
+}
+@keyframes color {
+    50%{
+        color: #C0C0C0;
+    }
+}
+
+.buttonsInMainPage{
+    color: white;
+    border: 5px double #f0dd24;
+
+    width: 25%;
+    height: 10%;
+
+    background-color: black;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+
+    margin-left: 38%;
+
+}
+
+
