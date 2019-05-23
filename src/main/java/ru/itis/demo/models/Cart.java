@@ -14,7 +14,7 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "cart")
-@ToString(exclude = {"user","cartProducts"})
+@ToString(exclude = {"user", "cartProducts"})
 public class Cart {
 
     @Id
@@ -34,7 +34,6 @@ public class Cart {
     public Cart() {
     }
 
-    ;
 
     public Cart(long cart_id, User user, List<Product> listOfProducts) {
         products = new ArrayList<>();

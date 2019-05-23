@@ -13,17 +13,17 @@ public class SignUpController {
     private final SignUpService service;
 
     @Autowired
-    public SignUpController(SignUpService service){
+    public SignUpController(SignUpService service) {
         this.service = service;
     }
 
     @GetMapping("/signUp")
-    public String getSignUpPage(){
+    public String getSignUpPage() {
         return "signUp";
     }
 
     @PostMapping("/signUp")
-    public String signUp(UserForm userForm){
+    public String signUp(UserForm userForm) {
         service.signUp(userForm);
         return "redirect:/profile";
     }

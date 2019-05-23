@@ -46,14 +46,15 @@
     color: lightgray;
     font-size: 15px;
 }
-.GenderCheck{
+
+.GenderCheck {
     font-family: 'Montserrat', sans-serif;
     color: lightgray;
     font-size: 15px;
     padding-top: 1px;
 }
 
-.AgeInput{
+.AgeInput {
     font-family: 'Montserrat', sans-serif;
     color: lightgray;
     font-size: 15px;
@@ -79,11 +80,11 @@ button:hover, button:focus {
 
     50% {
         color: #fff;
-        text-shadow: 0px -1px 0px #444, 0px 0px 5px #ffd, 0px 0px 8px #fff;
+        text-shadow: 0 -1px 0 #444, 0 0 5px #ffd, 0 0 8px #fff;
     }
     100% {
         color: #ddd;
-        text-shadow: 0px -1px 0px #000;
+        text-shadow: 0 -1px 0 #000;
     }
 }
 
@@ -122,30 +123,35 @@ button:hover, button:focus {
     font-family: 'Montserrat', sans-serif;
 
 }
-a{
+
+a {
     padding-top: 5%;
 }
+
 a:hover, a:focus {
     animation: linear 1.2s light infinite;
 }
-.WritingTextInMainPage{
+
+.WritingTextInMainPage {
 
     color: #C0C0C0;
     text-align: center;
     padding-top: 5%;
 
 }
+
 .wave {
     color: #C0C0C0;
     animation: 0.5s color infinite;
 }
+
 @keyframes color {
-    50%{
+    50% {
         color: #C0C0C0;
     }
 }
 
-.buttonsInMainPage{
+.buttonsInMainPage {
     color: white;
     border: 5px double #f0dd24;
 

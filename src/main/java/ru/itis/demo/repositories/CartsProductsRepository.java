@@ -4,7 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.itis.demo.models.CartProduct;
 
-
 public interface CartsProductsRepository extends JpaRepository<CartProduct, Long> {
 
     @Transactional

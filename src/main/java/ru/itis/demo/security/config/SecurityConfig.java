@@ -38,25 +38,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.
                 authorizeRequests().
-                    antMatchers("/profile/**").authenticated()
-                    .antMatchers("/signUp/**").permitAll()
-                    .antMatchers("/css/**").permitAll()
-                    .antMatchers("/main/**").permitAll()
-                    .anyRequest().permitAll()
-                    .and()
+                antMatchers("/profile/**").authenticated()
+                .antMatchers("/signUp/**").permitAll()
+                .antMatchers("/css/**").permitAll()
+                .antMatchers("/main/**").permitAll()
+                .anyRequest().permitAll()
+                .and()
                 .formLogin()
-                    .usernameParameter("login")
-                    .defaultSuccessUrl("/profile")
-                    .loginPage("/login")
-                    .and()
+                .usernameParameter("login")
+                .defaultSuccessUrl("/profile")
+                .loginPage("/login")
+                .and()
                 .rememberMe()
-                    .rememberMeParameter("remember-me")
-                    .tokenRepository(tokenRepository());
+                .rememberMeParameter("remember-me")
+                .tokenRepository(tokenRepository());
         http.csrf().disable();
     }
 
     @Bean
-    public PersistentTokenRepository tokenRepository(){
+    public PersistentTokenRepository tokenRepository() {
         JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
         tokenRepository.setDataSource(dataSource);
         return tokenRepository;

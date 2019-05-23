@@ -12,7 +12,7 @@ public class UserDto {
 
     private String fullName;
 
-    public static UserDto from(User user){
+    public static UserDto from(User user) {
         return UserDto.builder()
                 .fullName(user.getName())
                 .build();

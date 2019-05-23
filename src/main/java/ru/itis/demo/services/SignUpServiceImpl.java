@@ -16,7 +16,7 @@ public class SignUpServiceImpl implements SignUpService {
     private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public SignUpServiceImpl(UsersRepository usersRepository, PasswordEncoder passwordEncoder){
+    public SignUpServiceImpl(UsersRepository usersRepository, PasswordEncoder passwordEncoder) {
         this.usersRepository = usersRepository;
         this.passwordEncoder = passwordEncoder;
     }

@@ -13,8 +13,8 @@ import static ru.itis.demo.transfer.UserDto.from;
 public class ProfileController {
 
     @GetMapping("/profile")
-    public String getProfilePage(ModelMap modelMap, Authentication authentication){
-        if(authentication == null){
+    public String getProfilePage(ModelMap modelMap, Authentication authentication) {
+        if (authentication == null) {
             return "redirect:/login";
         }
         UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
