@@ -23,7 +23,12 @@
         <label>Password</label>
         <input type="password" placeholder="Password" name="password" id="password">
     </div>
-
+    <br>
+    <div>
+        <label for="remember-me">
+            <input type="checkbox" id="remember-me" name="remember-me">Remember me
+        </label>
+    </div>
     <button type="submit">Submit</button>
 </form>
 <div id="fotter">

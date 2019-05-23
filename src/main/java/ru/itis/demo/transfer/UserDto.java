@@ -10,11 +10,11 @@ import ru.itis.demo.models.User;
 @Builder
 public class UserDto {
 
-    private String firstName;
+    private String fullName;
 
     public static UserDto from(User user){
         return UserDto.builder()
-                .firstName(user.getName())
+                .fullName(user.getName())
                 .build();
     }
 }

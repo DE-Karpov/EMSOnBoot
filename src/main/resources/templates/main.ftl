@@ -14,11 +14,11 @@
         <a id="EMS"><h1>EMS</h1></a>
         <p class="WritingTextInMainPage">Welcome to Express Mail Shop! </p>
     </div>
-    <a type="button" href="login.ftl">
+    <a type="button" href="/login">
         <button class="buttonsInMainPage" id="but1"> Sign In</button>
     </a>
     <p></p>
-    <a type="button" href="registration.ftl">
+    <a type="button" href="/signUp">
         <button class="buttonsInMainPage" id="but2">Sign Up</button>
     </a>
 

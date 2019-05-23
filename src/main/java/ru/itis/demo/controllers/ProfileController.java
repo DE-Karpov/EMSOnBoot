@@ -19,7 +19,7 @@ public class ProfileController {
         }
         UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
         UserDto user = from(details.getUser());
-        modelMap.addAttribute("user", user);
+        modelMap.addAttribute("user", user.getFullName());
         return "profile";
     }
 }
