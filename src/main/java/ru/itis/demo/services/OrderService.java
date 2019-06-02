@@ -2,14 +2,11 @@ package ru.itis.demo.services;
 
 import ru.itis.demo.models.Address;
 import ru.itis.demo.models.Cart;
+import ru.itis.demo.models.Product;
 import ru.itis.demo.models.User;
 
+import java.util.List;
+
 public interface OrderService {
-
-    Cart getUserCard(SignInService signInService, String login);
-
-    void addOrders(String ids, Address address, User user);
-
-    Boolean contains(Long id, Cart cart);
-
+    List<Product> findOrders(Long userId);
 }

@@ -18,82 +18,112 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body class="mainClass">
+<body class="mainClass1">
 <div id="box1">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav" style="background-color: black;">
+        <a class="navbar-brand" href="#" style="background-color: black;color: #f0dd24">Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown" style="background-color: #f0dd24; color: #f0dd24">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">Profile<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/orders">Orders</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Links
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="https://www.rambler.ru">email</a>
+                        <a class="dropdown-item" href="https://www.instagram.com/euphoriaendlesss">Instagram</a>
+                        <a class="dropdown-item" href="https://wwww.facebook.com/GuzelMusina">Facebook</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
     <div class="WelcomeText">
         <p style="color: white">Dear, ${user}</p>
         <p class="WritingTextInMainPage">Welcome to Express Mail Shop!</p>
     </div>
-
-    <table class="UserInfo">
-        <tr>
-            <td>
-                <div class="NameInput" style="padding: 10px">
+    <div>
+        <table class="UserInfo">
+            <tr>
+                <td>
                     <label>Name and Surname</label>
-                </div>
-            </td>
+                    <div class="NameInput" style="padding: 10px">
+                        <label>${user}</label>
+                    </div>
+                </td>
 
-            <td>
-                <div class="EmailInput" style="padding: 10px">
-                    <label>Email address</label>
-                </div>
-            </td>
-            <td>
-                <div class="AgeInput" style="padding: 10px">
+                <td>
+                    <label>Login</label>
+                    <div class="EmailInput" style="padding: 10px">
+                        <label>${login}</label>
+                    </div>
+                </td>
+                <td>
                     <label>Age</label>
-                </div>
-            </td>
-            <td>
-                <div class="GenderCheck" style="padding: 10px">
+                    <div class="AgeInput" style="padding: 10px">
+                        <label>${age}</label>
+                    </div>
+                </td>
+                <td>
                     <label>Gender</label>
-                </div>
-            </td>
-        </tr>
+                    <div class="GenderCheck" style="padding: 10px">
+                        <label>${gender}</label>
+                    </div>
+                </td>
+            </tr>
 
-        <tr>
-            <td>
-                <div class="AddressInfo" style="padding: 10px">
-                    Address information
-                </div>
-            </td>
-            <td>
-                <div class="Phone" style="padding: 10px">
-                    Phone Number
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p>
+            <tr>
+                <td>
+                    <label>Address</label>
+                    <div class="AddressInfo" style="padding: 10px">
+                        Address information
+                    </div>
+                </td>
+                <td>
+                    <label>Phone</label>
+                    <div class="Phone" style="padding: 10px">
+                        Phone Number
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
 
-                </p>
-            </td>
-            <td>
-                <p>
+                    </p>
+                </td>
+                <td>
+                    <p>
 
-                </p>
-            </td>
-            <td>
-                <p>
+                    </p>
+                </td>
+                <td>
+                    <p>
 
-                </p>
-            </td>
-            <td>
-                <p>
+                    </p>
+                </td>
+                <td>
+                    <p>
 
-                </p>
-            </td>
-            <td>
-                <div class="butn">
-                    <a href="/login">
-                        <button style="margin-right: 0; text-align: center;">LOGOUT</button>
-                    </a>
-                </div>
-            </td>
-        </tr>
-
-
-    </table>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
 
 
     <div id="fotter">

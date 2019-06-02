@@ -16,18 +16,38 @@
 
 <body class="mainClass">
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav" style="background-color: black;">
+    <a class="navbar-brand" href="#" style="background-color: black;color: #f0dd24">Menu</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" style="background-color: #f0dd24; color: #f0dd24">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/main.html">Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signUp">Sign Up</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Links
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="https://www.rambler.ru">email</a>
+                    <a class="dropdown-item" href="https://www.instagram.com/euphoriaendlesss">Instagram</a>
+                    <a class="dropdown-item" href="https://wwww.facebook.com/GuzelMusina">Facebook</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
 <#if error??>
     <div class="alert" role="alert" style="color: white">Wrong login or password.</div>
 </#if>
-
-
-<div class="wrapperr">
-    <div class="butn">
-        <a href="/signUp">
-            <button style="margin: auto; text-align: center">SIGNUP</button>
-        </a>
-    </div>
-</div>
 <form method="post" action="/login">
     <h1 style="color: white; text-align: center">Login</h1>
     <div class="LoginInput">
@@ -44,7 +64,7 @@
             <label class="custom-control-label" for="remeber-me">Remember me</label>
         </div>
     </div>
-    <button type="submit">Submit</button>
+    <button type="submit" class="subbmitButton">Submit</button>
 </form>
 <div id="fotter">
     <p> KARPOV & MUSINA TEAM 2019</p>

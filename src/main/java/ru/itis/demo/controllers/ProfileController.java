@@ -4,6 +4,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import ru.itis.demo.models.User;
 import ru.itis.demo.transfer.UserDto;
 import ru.itis.demo.security.details.UserDetailsImpl;
 
@@ -18,8 +19,12 @@ public class ProfileController {
             return "redirect:/login";
         }
         UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
-        UserDto user = from(details.getUser());
-        modelMap.addAttribute("user", user.getFullName());
+        UserDto userDto = from(details.getUser());
+        User user = details.getUser();
+        modelMap.addAttribute("user", userDto.getFullName());
+        modelMap.addAttribute("login", user.getLogin());
+        modelMap.addAttribute("age", user.getAge());
+        modelMap.addAttribute("gender", user.getGender());
         return "profile";
     }
 }
