@@ -1,9 +1,6 @@
 package ru.itis.demo.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,10 +8,11 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Entity
 @Table(name = "cart")
-@ToString(exclude = {"user", "cartProducts"})
+@ToString(exclude = "user")
 public class Cart {
 
     @Id
@@ -28,16 +26,6 @@ public class Cart {
             joinColumns = @JoinColumn(name = "cart_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
     private List<Product> products;
-    @OneToMany(mappedBy = "cart")
-    private List<CartProduct> cartProducts;
-
-    public Cart() {
-    }
-
-
-    public Cart(long cart_id, User user, List<Product> listOfProducts) {
-        products = new ArrayList<>();
-    }
 
     public void add(Product product) {
         if (products == null) {

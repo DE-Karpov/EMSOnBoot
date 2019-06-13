@@ -28,14 +28,18 @@
     margin-bottom: 3%;
     background-color: black;
 }
-.mainClass1{
+
+.mainClass1 {
     background: black;
     font-family: 'Montserrat', sans-serif;
+    overflow: auto;
 }
-.informayion{
+
+.informayion {
     padding-top: 30px;
     padding-left: 20px;
 }
+
 .EmailInput {
     font-family: 'Montserrat', sans-serif;
     color: lightgray;
@@ -53,30 +57,33 @@
     color: lightgray;
     font-size: 15px;
 }
-.GenderCheck{
+
+.GenderCheck {
     font-family: 'Montserrat', sans-serif;
     color: lightgray;
     font-size: 15px;
     padding-top: 1px;
 }
 
-.AgeInput{
-    font-family: 'Montserrat', sans-serif;
-    color: lightgray;
-    font-size: 15px;
-}
-.Phone{
-    font-family: 'Montserrat', sans-serif;
-    color: lightgray;
-    font-size: 15px;
-}
-.AddressInfo{
+.AgeInput {
     font-family: 'Montserrat', sans-serif;
     color: lightgray;
     font-size: 15px;
 }
 
-.subbmitButton{
+.Phone {
+    font-family: 'Montserrat', sans-serif;
+    color: lightgray;
+    font-size: 15px;
+}
+
+.AddressInfo {
+    font-family: 'Montserrat', sans-serif;
+    color: lightgray;
+    font-size: 15px;
+}
+
+.subbmitButton {
 
     background-color: black;
     color: white;
@@ -140,30 +147,35 @@
     font-family: 'Montserrat', sans-serif;
 
 }
-a{
+
+a {
     padding-top: 5%;
 }
+
 a:hover, a:focus {
     animation: linear 1.2s light infinite;
 }
-.WritingTextInMainPage{
+
+.WritingTextInMainPage {
 
     color: #C0C0C0;
     text-align: center;
     padding-top: 5%;
 
 }
+
 .wave {
     color: #C0C0C0;
     animation: 0.5s color infinite;
 }
+
 @keyframes color {
-    50%{
+    50% {
         color: #C0C0C0;
     }
 }
 
-.buttonsInMainPage{
+.buttonsInMainPage {
     color: white;
     border: 5px double #f0dd24;
 
@@ -179,15 +191,16 @@ a:hover, a:focus {
     margin-left: 38%;
 
 }
-.wrapperr{
+
+.wrapperr {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 682px;
 }
 
-.butn{
+.butn {
     float: left;
     margin-right: 30px;
     text-align: center;
@@ -204,12 +217,12 @@ a:hover, a:focus {
     font-weight: 700;
 }
 
-.butn:last-child{
+.butn:last-child {
     margin-right: 0;
 }
 
 /* Tooltip */
-.myTooltip{
+.myTooltip {
     position: absolute;
     width: 100%;
     height: 44px;
@@ -225,12 +238,12 @@ a:hover, a:focus {
     transition: all 0.5s ease;
 }
 
-.myTooltip{
+.myTooltip {
     left: -160px;
 }
 
 
-.myTooltip:before{
+.myTooltip:before {
     content: "";
     position: absolute;
     top: 0;
@@ -241,48 +254,76 @@ a:hover, a:focus {
     border-bottom: 10px solid transparent;
 }
 
-.butn:hover .myTooltip{
+.butn:hover .myTooltip {
     opacity: 1;
 }
 
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-@media screen and (max-width: 1000px){
-    .wrapperr{
+@media screen and (max-width: 1000px) {
+    .wrapperr {
         width: 140px;
     }
-    .butn{
+
+    .butn {
         margin: 50px 0;
     }
 }
-.RemeberCheck{
+
+.RemeberCheck {
     font-family: 'Montserrat', sans-serif;
     color: lightgray;
     font-size: 15px;
     padding-top: 1px;
 }
-.UserInfo tr{
+
+.UserInfo tr {
     padding: 20%;
 }
+
 #box1 {
     background: black;
     font-family: 'Montserrat', sans-serif;
     outline: 15px solid black;
     padding: auto;
-    overflow: hidden;
+    position: absolute;
+}
+
+#box2 {
+    background: black;
+    font-family: 'Montserrat', sans-serif;
+    overflow: visible;
     position: absolute;
 }
 
 /*Nav bar
  */
-#nav{
+#nav {
     height: 30px;
     margin-top: 0;
     padding: 0;
+    color: #f0dd24;
+}
+
+.list-unstyled {
+    color: white;
+    padding: 10%;
+}
+.list-unstyled li{
+ margin-bottom: 10%;
+    margin-left: 10%;
+}
+.list-unstyled h5{
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 10%;
+    font-weight: normal;
+
+}
+.media-body{
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 10%;
+}
+.list-unstyled h4{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    padding-left: 10%;
     color: #f0dd24;
 }

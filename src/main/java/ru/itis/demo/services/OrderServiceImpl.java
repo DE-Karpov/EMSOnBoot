@@ -28,8 +28,12 @@ public class OrderServiceImpl implements OrderService {
         for (Order order : orders) {
             products.add(productsRepository.getOne(order.getProductId()));
         }
-
-
         return products;
     }
+
+    @Override
+    public void addOrder(Order order) {
+        ordersRepository.save(order);
+    }
+
 }

@@ -1,5 +1,6 @@
 package ru.itis.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import java.util.List;
 @Builder()
 @Entity
 @Table(name = "product")
-@ToString(exclude = "cartProducts")
+@ToString(exclude = "listOfCarts")
 public class Product {
 
     @Id
@@ -20,6 +21,8 @@ public class Product {
 
     private String name;
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
-    private List<CartProduct> cartProducts;
+    @ManyToMany(mappedBy = "products")
+    @Column(name = "cart_id")
+    @JsonIgnore
+    List<Cart> listOfCarts;
 }

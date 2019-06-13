@@ -16,7 +16,7 @@
 
 <body class="mainClass">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav" style="background-color: black;">
+<nav class="navbar navbar-expand-lg navbar-light" id="nav" style="background-color: black;">
     <a class="navbar-brand" href="#" style="background-color: black;color: #f0dd24">Menu</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,12 +25,11 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown" style="background-color: #f0dd24; color: #f0dd24">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="/main.html">Home </a>
+                <a class="nav-link" href="/main">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/signUp">Sign Up</a>
             </li>
-
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

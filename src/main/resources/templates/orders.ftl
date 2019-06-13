@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Profile</title>
+    <title>Orders</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -19,39 +19,16 @@
 </head>
 
 <body class="mainClass1">
+
 <div id="box1">
     <#include "navbar.ftl">
-    <br>
-    <div class="WelcomeText">
-        <p style="color: white">Dear, ${user}</p>
-        <p class="WritingTextInMainPage">Welcome to Express Mail Shop!</p>
-    </div>
-   <div class="informayion">
+    <div class="informayion">
         <div class="NameInput" style="padding: 10px">
-            <label>Username: </label>
-            <label>${user}</label>
-        </div>
-        <div class="EmailInput" style="padding: 10px">
-            <label>Login: </label>
-            <label>${login}</label>
-        </div>
-
-        <div class="AgeInput" style="padding: 10px">
-            <label>Age: </label>
-            <label>${age}</label>
-        </div>
-
-        <div class="GenderCheck" style="padding: 10px">
-            <label>Gender: </label>
-            <label>${gender}</label>
-        </div>
-
-        <div class="AddressInfo" style="padding: 10px">
-            <label>Address information: <label>
-        </div>
-
-        <div class="Phone" style="padding: 10px">
-            <label>Phone Number: <label>
+            <#list ordersFromServer as order>
+                <tr>
+                    <td>${order.name}</td>
+                </tr>
+            </#list>
         </div>
 
     </div>
