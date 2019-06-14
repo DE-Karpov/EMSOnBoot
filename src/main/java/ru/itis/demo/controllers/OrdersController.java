@@ -11,8 +11,12 @@ import ru.itis.demo.services.OrderService;
 @Controller
 public class OrdersController {
 
+    private final OrderService orderService;
+
     @Autowired
-    private OrderService orderService;
+    public OrdersController(OrderService orderService) {
+        this.orderService = orderService;
+    }
 
     @GetMapping("/orders")
     public String getOrdersPage(Authentication authentication, ModelMap modelMap) {
