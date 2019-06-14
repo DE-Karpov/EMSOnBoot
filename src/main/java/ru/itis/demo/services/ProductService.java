@@ -8,4 +8,6 @@ public interface ProductService {
 
     Optional<Product> getProduct(Long product_id);
 
+    void deleteProductFromCart(Long cart_id, Long product_id);
+
 }

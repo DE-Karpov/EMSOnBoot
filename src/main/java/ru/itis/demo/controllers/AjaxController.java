@@ -53,7 +53,7 @@ public class AjaxController {
             User user = details.getUser();
             if (product.isPresent()) {
                 user.getCart().remove(product.get());
-                userService.saveUser(user);
+                productService.deleteProductFromCart(user.getCart().getId(), product.get().getId());
                 return ResponseEntity.ok().build();
             }
         }

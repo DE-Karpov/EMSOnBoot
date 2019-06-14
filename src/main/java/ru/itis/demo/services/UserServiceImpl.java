@@ -16,6 +16,7 @@ public class UserServiceImpl implements UserService {
     public UserServiceImpl(UsersRepository usersRepository){
         this.usersRepository = usersRepository;
     }
+
     @Override
     public void saveUser(User user) {
         usersRepository.save(user);
@@ -25,4 +26,5 @@ public class UserServiceImpl implements UserService {
     public Optional<User> findByLogin(String login) {
         return usersRepository.findByLogin(login);
     }
+
 }
