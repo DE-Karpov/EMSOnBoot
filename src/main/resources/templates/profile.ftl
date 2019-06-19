@@ -34,6 +34,7 @@
 
         <div class="AddressInfo" style="padding: 10px">
             <label>Address information: <label>
+                    <label>${address}</label>
         </div>
 
         <div class="Phone" style="padding: 10px">

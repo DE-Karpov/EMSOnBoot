@@ -1,11 +1,10 @@
 package ru.itis.demo.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Builder
 @Data
@@ -13,6 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "address")
+@ToString(exclude = "users")
 public class Address {
 
     @Id
@@ -27,4 +27,9 @@ public class Address {
     private String streetName;
     @Column(name = "building_number")
     private Integer buildingNumber;
+
+    @ManyToMany(mappedBy = "addresses")
+    @Column(name = "user_id")
+    @JsonIgnore
+    private List<User> users;
 }

@@ -25,6 +25,7 @@ public class ProfileController {
         modelMap.addAttribute("login", user.getLogin());
         modelMap.addAttribute("age", user.getAge());
         modelMap.addAttribute("gender", user.getGender());
+        modelMap.addAttribute("address", user.getAddresses().toString());
         return "profile";
     }
 }
