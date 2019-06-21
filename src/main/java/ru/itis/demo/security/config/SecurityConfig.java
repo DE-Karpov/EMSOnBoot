@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final DataSource dataSource;
 
     @Autowired
-    public SecurityConfig(@Qualifier("userDetailsServiceImpl") UserDetailsService service, PasswordEncoder passwordEncoder, DataSource dataSource){
+    public SecurityConfig(@Qualifier("userDetailsServiceImpl") UserDetailsService service, PasswordEncoder passwordEncoder, DataSource dataSource) {
         this.service = service;
         this.passwordEncoder = passwordEncoder;
         this.dataSource = dataSource;
@@ -42,6 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.
                 authorizeRequests().
                 antMatchers("/profile/**").authenticated()
+                .antMatchers("/users/**").authenticated()
                 .antMatchers("/signUp/**").permitAll()
                 .antMatchers("/css/**").permitAll()
                 .antMatchers("/main/**").permitAll()

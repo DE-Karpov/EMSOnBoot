@@ -63,8 +63,8 @@
     </div>
     <div class="RemeberCheck">
         <div class="custom-control custom-radio custom-control-inline">
-            <input type="checkbox" id="remeber-me" name="customRadioInline1" class="custom-control-input">
-            <label class="custom-control-label" for="remeber-me">Remember me</label>
+            <input type="checkbox" id="remember-me" name="remember-me" class="custom-control-input">
+            <label class="custom-control-label" for="remember-me">Remember me</label>
         </div>
     </div>
     <button type="submit" class="subbmitButton">Submit</button>

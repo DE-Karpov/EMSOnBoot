@@ -19,7 +19,6 @@ import java.util.Set;
 public class Cart {
 
     @Id
-    @Column(name = "cart_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -31,21 +30,15 @@ public class Cart {
             name = "cart_product",
             joinColumns = @JoinColumn(name = "cart_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
-    private Set<Product> products;
+    private List<Product> products;
 
     public void add(Product product) {
         if (products == null) {
-            products = new HashSet<>();
+            products = new ArrayList<>();
             products.add(product);
         } else {
             products.add(product);
         }
-    }
-
-    public CartForm buildForm(Cart cart){
-        return CartForm.builder()
-                .ownerId(cart.getUser().getId())
-                .build();
     }
 
     public void remove(Product product) {

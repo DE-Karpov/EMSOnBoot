@@ -2,6 +2,7 @@ package ru.itis.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import ru.itis.demo.forms.ProductForm;
 import ru.itis.demo.models.Order;
 import ru.itis.demo.models.Product;
+import ru.itis.demo.models.Role;
 import ru.itis.demo.models.User;
 import ru.itis.demo.security.details.UserDetailsImpl;
 import ru.itis.demo.services.OrderService;
@@ -28,9 +30,12 @@ public class ProductsController {
     }
 
     @GetMapping("/products")
-    public String getProductsPage(Authentication authentication, ModelMap model) {
+    public String getProductsPage(Authentication authentication, ModelMap modelMap) {
         if (authentication != null) {
-            model.addAttribute("header", true);
+            if(authentication.getAuthorities().contains(new SimpleGrantedAuthority(Role.ADMIN.name()))){
+                modelMap.addAttribute("admin", true);
+            }
+            modelMap.addAttribute("header", true);
         }
         return "products";
     }

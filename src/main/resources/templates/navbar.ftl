@@ -45,6 +45,11 @@
                     <a class="dropdown-item" href="https://wwww.facebook.com/GuzelMusina">Facebook</a>
                 </div>
             </li>
+            <#if admin??>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/users">Users<span class="sr-only">(current)</span></a>
+                </li>
+            </#if>
             <li class="nav-item">
                 <a class="nav-link" href="/logout">Log Out</a>
             </li>
