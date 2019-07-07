@@ -17,4 +17,10 @@ public interface ProductsRepository extends JpaRepository<Product, Long> {
     @Transactional
     @Query(nativeQuery = true, value = "delete from cart_product where cart_id = ?1 and product_id = ?2")
     void deleteProductFromCart(Long cart_id, Long product_id);
+
+    @Modifying
+    @Transactional
+    @Query(nativeQuery = true, value = "delete from cart_product where cart_id = ?1")
+    void deleteProductsFromCart(Long cart_id);
+
 }

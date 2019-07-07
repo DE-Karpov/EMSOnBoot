@@ -15,6 +15,8 @@
     <script src="/js/addProduct.js"></script>
     <script src="/js/deleteProduct.js"></script>
     <script src="/js/getCart.js"></script>
+    <link rel="import">
+
 </head>
 
 <body class="mainClass1" onload="getCart()">
@@ -46,11 +48,14 @@
             </div>
         </nav>
     </#if>
+    <form method="post" action="/products">
+        <button type="submit">Submit</button>
+    </form>
     <div id="goods_table"></div>
     <ul class="list-unstyled" id="product1">
         <div id="1" onclick="addProduct(1)">
             <li class="media">
-                <img src="../img/1.JPG">
+                <img src="../img/1.jpg" alt="" style="width: 250px; height: 250px;">
                 <div class="media-body">
                     <h5>Cap</h5>
                     <h4>799.–</h4>
@@ -63,9 +68,8 @@
             </li>
         </div>
         <div id="2" onclick="addProduct(2)">
-            <li class=" media
-        " id="product2">
-                <img src="../img/2.JPG">
+            <li class=" media" id="product2">
+                <img src="../img/2.jpg" style="width: 250px; height: 250px;">
                 <div class="media-body">
                     <h5>Sneakers</h5>
                     <h4>599.–</h4>
@@ -78,7 +82,7 @@
         <div id="3" onclick="addProduct(3)">
             <li class=" media
         " id="product3">
-                <img src="../img/3.JPG">
+                <img src="../img/3.jpg" style="width: 250px; height: 250px;">>
                 <div class="media-body">
                     <h5>T-Shirt</h5>
                     <h4>499.–</h4>

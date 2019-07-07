@@ -3,6 +3,7 @@ package ru.itis.demo.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.itis.demo.models.Address;
+import ru.itis.demo.models.Product;
 import ru.itis.demo.models.User;
 import ru.itis.demo.repositories.UsersRepository;
 
@@ -23,7 +24,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(User user) {
-        usersRepository.save(user);
+            usersRepository.save(user);
     }
 
     @Override

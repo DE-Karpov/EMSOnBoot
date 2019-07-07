@@ -8,16 +8,16 @@ function getCart() {
             tableHtml +=
                 '<tr>' +
                 '<th>' +
-                'id' +
+                'Name' +
                 '</th>' +
                 '<th>' +
-                'name' +
+                'Count' +
                 '</th>' +
                 '</tr>';
             for (var i = 0; i < data.length; i++) {
                 tableHtml += '<tr>' +
-                    '<td>' + data[i].id + '</td>' +
                     '<td>' + data[i].name + '</td>' +
+                    '<td>' + data[i].counter + '</td>' +
                     '<td>' + '<button onclick="deleteProduct(' + data[i].id + ')" formaction="delete" id = ' + 1 + '>Delete</button>' + '</td>' +
                     '</tr>';
             }

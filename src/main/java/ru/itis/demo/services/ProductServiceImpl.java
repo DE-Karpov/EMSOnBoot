@@ -27,4 +27,9 @@ public class ProductServiceImpl implements ProductService {
         productsRepository.deleteProductFromCart(cart_id, product_id);
     }
 
+    @Override
+    public void deleteProductsFromCart(Long cart_id) {
+        productsRepository.deleteProductsFromCart(cart_id);
+    }
+
 }

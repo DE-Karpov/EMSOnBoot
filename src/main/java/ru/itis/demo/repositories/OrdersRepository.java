@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface OrdersRepository extends JpaRepository<Order, Long> {
 
-    @Query(nativeQuery = true,value = "SELECT * FROM public.order o WHERE o.customer_id = ?")
+    @Query(nativeQuery = true,value = "SELECT * FROM public.ems_order o WHERE o.customer_id = ?")
     List<Order> findAllByUserId(Long id);
 }

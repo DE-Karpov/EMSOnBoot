@@ -1,6 +1,7 @@
 package ru.itis.demo.services;
 
 import ru.itis.demo.models.Address;
+import ru.itis.demo.models.Product;
 import ru.itis.demo.models.User;
 
 import java.util.List;
@@ -16,4 +17,5 @@ public interface UserService {
     String parseOfAddress(Set<Address> addressSet);
 
     List<User> findAll();
+
 }

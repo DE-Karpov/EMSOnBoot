@@ -61,13 +61,13 @@
         <label>Login</label>
         <input type="text" placeholder="Enter login" name="login" id="login>
     </div>
-    <div class=" PasswordInput">
+    <div>
         <label>Password</label>
         <input type="password" placeholder="Password" name="password" id="password">
     </div>
     <div class="AgeInput">
         <label>Age</label>
-        <input type="password" placeholder="20" name="age" id="age">
+        <input type="number" placeholder="20" name="age" id="age">
     </div>
     <div class="GenderCheck">
         Gender

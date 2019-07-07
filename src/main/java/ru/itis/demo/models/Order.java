@@ -12,7 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order")
+@Table(name = "ems_order")
 public class Order {
 
     @Id
@@ -21,9 +21,9 @@ public class Order {
 
     @Column(name = "product_id")
     private Long productId;
-    @ManyToOne
-    @JoinColumn(name = "address_id")
-    private Address address;
+//    @ManyToOne
+//    @JoinColumn(name = "address_id")
+//    private Address address;
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private User user;

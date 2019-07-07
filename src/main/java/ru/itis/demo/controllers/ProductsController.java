@@ -7,25 +7,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import ru.itis.demo.forms.ProductForm;
-import ru.itis.demo.models.Order;
-import ru.itis.demo.models.Product;
-import ru.itis.demo.models.Role;
-import ru.itis.demo.models.User;
+import ru.itis.demo.models.*;
+import ru.itis.demo.repositories.CartsRepository;
 import ru.itis.demo.security.details.UserDetailsImpl;
 import ru.itis.demo.services.OrderService;
 import ru.itis.demo.services.ProductService;
+import ru.itis.demo.services.UserService;
+
+import java.util.List;
 
 @Controller
 public class ProductsController {
 
     private final OrderService orderService;
-
     private final ProductService productService;
 
+    private final CartsRepository cartsRepository;
+
     @Autowired
-    public ProductsController(OrderService orderService, ProductService productService) {
+    public ProductsController(OrderService orderService, CartsRepository cartsRepository, ProductService productService) {
         this.orderService = orderService;
+        this.cartsRepository = cartsRepository;
         this.productService = productService;
     }
 
@@ -40,18 +42,22 @@ public class ProductsController {
         return "products";
     }
 
-//    @PostMapping(value = "products", params = "redirect")
-//    public String addOrder(Authentication authentication) {
-//        UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
-//        User user = details.getUser();
-//        for (Product product : user.getCart().getProducts()) {
-//            Order order = Order.builder()
-//                    .user(user)
-//                    .productId(product.getId())
-//                    .status("Delievering")
-//                    .build();
-//            orderService.addOrder(order);
-//        }
-//        return "orders";
-//    }
+    @PostMapping("/products")
+    public String addOrder(Authentication authentication) {
+        UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
+        User user = details.getUser();
+        Cart cart = cartsRepository.findCartById(user.getCart().getId()).get();
+        List<Product> productList = cart.getProducts();
+            for (Product product : productList) {
+                Order order = Order.builder()
+                        .user(user)
+                        .productId(product.getId())
+                        .status("Delievering")
+                        .build();
+                orderService.addOrder(order);
+            }
+            user.getCart().getProducts().clear();
+            productService.deleteProductsFromCart(user.getCart().getId());
+            return "redirect:/profile";
+    }
 }
