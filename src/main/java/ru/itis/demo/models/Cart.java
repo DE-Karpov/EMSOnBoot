@@ -25,7 +25,7 @@ public class Cart {
     @OneToOne(mappedBy = "cart")
     private User user;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "cart_product",
             joinColumns = @JoinColumn(name = "cart_id"),
@@ -33,15 +33,12 @@ public class Cart {
     private List<Product> products;
 
     public void add(Product product) {
-        if (products == null) {
+        if (products == null)
             products = new ArrayList<>();
-            products.add(product);
-        } else {
-            products.add(product);
-        }
+        products.add(product);
     }
 
-    public void remove(Product product) {
+    public void remove(Product product){
         products.remove(product);
     }
 

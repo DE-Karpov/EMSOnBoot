@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/addProduct.js"></script>
     <script src="/js/deleteProduct.js"></script>
     <script src="/js/getCart.js"></script>
+    <script src="/js/getAmount.js"></script>
     <link rel="import">
 
 </head>

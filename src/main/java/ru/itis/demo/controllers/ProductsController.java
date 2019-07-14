@@ -12,7 +12,6 @@ import ru.itis.demo.repositories.CartsRepository;
 import ru.itis.demo.security.details.UserDetailsImpl;
 import ru.itis.demo.services.OrderService;
 import ru.itis.demo.services.ProductService;
-import ru.itis.demo.services.UserService;
 
 import java.util.List;
 

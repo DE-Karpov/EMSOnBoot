@@ -17,7 +17,7 @@ function getCart() {
             for (var i = 0; i < data.length; i++) {
                 tableHtml += '<tr>' +
                     '<td>' + data[i].name + '</td>' +
-                    '<td>' + data[i].counter + '</td>' +
+                    '<td>' + getAmount(data[i].name) + '</td>' +
                     '<td>' + '<button onclick="deleteProduct(' + data[i].id + ')" formaction="delete" id = ' + 1 + '>Delete</button>' + '</td>' +
                     '</tr>';
             }

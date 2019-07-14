@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.itis.demo.forms.ProductForm;
+import ru.itis.demo.models.Cart;
 import ru.itis.demo.models.Product;
 import ru.itis.demo.models.User;
 import ru.itis.demo.security.details.UserDetailsImpl;
@@ -36,9 +37,7 @@ public class AjaxController {
             UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
             User user = details.getUser();
             if (product.isPresent()) {
-                user.getCart().add(product.get());
-                userService.saveUser(user);
-                user.getCart().remove(product.get());
+                userService.saveUser(user, product.get());
                 return ResponseEntity.ok(product.get());
             }
         }
@@ -52,8 +51,7 @@ public class AjaxController {
             UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
             User user = details.getUser();
             if (product.isPresent()) {
-                user.getCart().remove(product.get());
-                productService.deleteProductFromCart(user.getCart().getId(), product.get().getId());
+                productService.deleteProductFromCart(user, product.get());
                 return ResponseEntity.ok().build();
             }
         }
@@ -67,6 +65,18 @@ public class AjaxController {
             UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
             User user = details.getUser();
             return ResponseEntity.ok(userService.findByLogin(user.getLogin()).get().getCart().getProducts());
+        }
+        return ResponseEntity.ok(null);
+    }
+
+    @GetMapping("/products/getAmount")
+    public ResponseEntity<Object> getAmount(Authentication authentication, @RequestParam String name) {
+        if (authentication != null) {
+            UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
+            User user = details.getUser();
+            Cart cart = userService.findByLogin(user.getLogin()).get().getCart();
+            Long amount = productService.getAmount(cart.getId(), name);
+            return ResponseEntity.ok(amount.toString());
         }
         return ResponseEntity.ok(null);
     }
