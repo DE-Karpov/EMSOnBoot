@@ -28,5 +28,6 @@ public class Order {
     @JoinColumn(name = "customer_id")
     private User user;
     private String status;
+    private Long amount;
 
 }

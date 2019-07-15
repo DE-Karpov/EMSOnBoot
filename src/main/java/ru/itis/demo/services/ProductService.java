@@ -8,12 +8,12 @@ import java.util.Optional;
 
 public interface ProductService {
 
-    Optional<Product> getProduct(Long product_id);
+    Optional<Product> getProduct(Long productId);
 
     void deleteProductFromCart(User user, Product product);
 
-    void deleteProductsFromCart(Long cart_id);
+    void deleteProductsFromCart(Long cartId);
 
-    Long getAmount(Long cart_id, String name);
+    Long getAmount(Long cartId, String name);
 
 }

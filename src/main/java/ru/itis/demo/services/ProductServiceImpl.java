@@ -19,8 +19,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Optional<Product> getProduct(Long product_id) {
-        return productsRepository.findById(product_id);
+    public Optional<Product> getProduct(Long productId) {
+        return productsRepository.findById(productId);
     }
 
     @Override
@@ -41,14 +41,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void deleteProductsFromCart(Long cart_id) {
-        productsRepository.deleteProductsFromCart(cart_id);
+    public void deleteProductsFromCart(Long cartId) {
+        productsRepository.deleteProductsFromCart(cartId);
     }
 
     @Override
-    public Long getAmount(Long cart_id, String name) {
+    public Long getAmount(Long cartId, String name) {
         Long productId = productsRepository.findProductIdByName(name);
-        return productsRepository.getAmount(cart_id, productId);
+        return productsRepository.getAmount(cartId, productId);
     }
 
 

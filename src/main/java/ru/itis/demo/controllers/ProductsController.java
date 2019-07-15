@@ -50,6 +50,7 @@ public class ProductsController {
             for (Product product : productList) {
                 Order order = Order.builder()
                         .user(user)
+                        .amount(productService.getAmount(user.getCart().getId(),product.getName()))
                         .productId(product.getId())
                         .status("Delievering")
                         .build();

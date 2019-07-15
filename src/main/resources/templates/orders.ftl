@@ -11,14 +11,15 @@
     <#include "navbar.ftl">
     <div class="informayion">
         <div class="NameInput" style="padding: 10px">
-            <#list ordersFromServer as order>
+            <#list ordersFromServer as key, value>
                 <tr>
-                    <td>${order.name}</td>
+                    <td>${key} ${value}</td>
                 </tr>
             </#list>
         </div>
 
     </div>
+
 
     <div id="fotter">
         <p> KARPOV & MUSINA TEAM 2019</p>

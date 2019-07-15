@@ -8,4 +8,6 @@ public interface OrderService {
     List<Product> findOrders(Long userId);
 
     void addOrder(Order order);
+
+    Long getAmount(Long customerId, Long productId);
 }

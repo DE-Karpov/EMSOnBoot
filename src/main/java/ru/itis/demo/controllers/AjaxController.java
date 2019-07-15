@@ -41,7 +41,7 @@ public class AjaxController {
                 return ResponseEntity.ok(product.get());
             }
         }
-        return ResponseEntity.ok(null);
+        return ResponseEntity.badRequest().build();
     }
 
     @PostMapping("/products/deleteProduct")
@@ -55,7 +55,7 @@ public class AjaxController {
                 return ResponseEntity.ok().build();
             }
         }
-        return ResponseEntity.ok(null);
+        return ResponseEntity.badRequest().build();
     }
 
 
@@ -64,9 +64,11 @@ public class AjaxController {
         if (authentication != null) {
             UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
             User user = details.getUser();
-            return ResponseEntity.ok(userService.findByLogin(user.getLogin()).get().getCart().getProducts());
+            if (userService.findByLogin(user.getLogin()).isPresent()) {
+                return ResponseEntity.ok(userService.findByLogin(user.getLogin()).get().getCart().getProducts());
+            }
         }
-        return ResponseEntity.ok(null);
+        return ResponseEntity.badRequest().build();
     }
 
     @GetMapping("/products/getAmount")
@@ -74,10 +76,10 @@ public class AjaxController {
         if (authentication != null) {
             UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
             User user = details.getUser();
-            Cart cart = userService.findByLogin(user.getLogin()).get().getCart();
+            Cart cart = user.getCart();
             Long amount = productService.getAmount(cart.getId(), name);
             return ResponseEntity.ok(amount.toString());
         }
-        return ResponseEntity.ok(null);
+        return ResponseEntity.badRequest().build();
     }
 }

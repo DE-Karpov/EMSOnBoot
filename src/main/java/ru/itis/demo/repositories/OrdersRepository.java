@@ -12,4 +12,7 @@ public interface OrdersRepository extends JpaRepository<Order, Long> {
 
     @Query(nativeQuery = true,value = "SELECT * FROM public.ems_order o WHERE o.customer_id = ?")
     List<Order> findAllByUserId(Long id);
+
+    @Query(nativeQuery = true, value = "SELECT amount FROM ems_order o WHERE o.customer_id = ?1 AND o.product_id = ?2")
+    Long getAmountByUserIdAndProductId(Long userId, Long productId);
 }

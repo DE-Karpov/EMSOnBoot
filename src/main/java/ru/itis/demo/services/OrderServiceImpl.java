@@ -35,4 +35,9 @@ public class OrderServiceImpl implements OrderService {
     public void addOrder(Order order) {
             ordersRepository.save(order);
     }
+
+    @Override
+    public Long getAmount(Long customerId, Long productId) {
+       return ordersRepository.getAmountByUserIdAndProductId(customerId,productId);
+    }
 }
