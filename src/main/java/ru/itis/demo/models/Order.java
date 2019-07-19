@@ -4,8 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Builder
 @Data
@@ -29,5 +32,9 @@ public class Order {
     private User user;
     private String status;
     private Long amount;
+
+
+    @Transient
+    private List<Product> productList = new ArrayList<>();
 
 }

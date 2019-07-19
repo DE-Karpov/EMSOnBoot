@@ -17,8 +17,8 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light" id="nav" style="background-color: black;">
-    <a class="navbar-brand" href="#" style="background-color: black;color: #f0dd24">Menu</a>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light" id="nav" style="background-color: black;">
+    <a class="navbar-brand" href="#" style="padding-left: 13px; background-color: black;color: #f0dd24">Menu</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -56,5 +56,8 @@
         </ul>
     </div>
 </nav>
+
+<br>
+<div style="height: 50px"></div>
 </body>
 </html>

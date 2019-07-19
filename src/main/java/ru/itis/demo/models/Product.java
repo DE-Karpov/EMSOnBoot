@@ -25,4 +25,8 @@ public class Product {
     @Column(name = "cart_id")
     @JsonIgnore
     List<Cart> listOfCarts;
+
+
+    @Transient
+    private Long amount;
 }

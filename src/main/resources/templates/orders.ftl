@@ -11,19 +11,28 @@
     <#include "navbar.ftl">
     <div class="informayion">
         <div class="NameInput" style="padding: 10px">
-            <#list ordersFromServer as key, value>
-                <tr>
-                    <td>${key} ${value}</td>
-                </tr>
-            </#list>
+            <#if ordersFromServer ??>
+            <tr>
+                <td>
+                    <div style="color:white; padding:1%; border: 4px solid #f0dd24;">
+                        <#list ordersFromServer.productList as product>
+                            <h2>${product.name}  ${product.amount} </h2>
+                        </#list>
+                    </div>
+                </td>
+            </tr>
+                <#else >
+                <h2>You haven't orders</h2>
+            </#if>
         </div>
-
     </div>
 
+</div>
 
-    <div id="fotter">
-        <p> KARPOV & MUSINA TEAM 2019</p>
-    </div>
+
+<div id="fotter">
+    <p> KARPOV & MUSINA TEAM 2019</p>
+</div>
 </div>
 <script>
     document.body.style.overflow = 'hidden';

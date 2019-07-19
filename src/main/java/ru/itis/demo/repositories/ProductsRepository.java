@@ -39,4 +39,5 @@ public interface ProductsRepository extends JpaRepository<Product, Long> {
     @Query(nativeQuery = true, value = "SELECT amount FROM cart_product WHERE cart_id = ?1 AND product_id = ?2")
     Long getAmount(Long cart_id, Long product_id);
 
+    Product findAllById(Long productId);
 }

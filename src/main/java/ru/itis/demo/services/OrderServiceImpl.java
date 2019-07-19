@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import ru.itis.demo.models.*;
 import ru.itis.demo.repositories.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -21,23 +20,32 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Product> findOrders(Long userId) {
+    public Order findOrders(Long userId) {
         List<Order> orders = ordersRepository.findAllByUserId(userId);
         System.out.println(orders);
-        List<Product> products = new ArrayList<>();
-        for (Order order : orders) {
-            products.add(productsRepository.getOne(order.getProductId()));
+        Order allOrder;
+        try {
+            allOrder = orders.get(0);
         }
-        return products;
+        catch (Exception e){
+            allOrder = null;
+            System.out.println(")");
+        }
+        for (Order order : orders) {
+            Product newProduct = productsRepository.findAllById(order.getProductId());
+            newProduct.setAmount(order.getAmount());
+            allOrder.getProductList().add(newProduct);
+        }
+        return allOrder;
     }
 
     @Override
     public void addOrder(Order order) {
-            ordersRepository.save(order);
+        ordersRepository.save(order);
     }
 
     @Override
     public Long getAmount(Long customerId, Long productId) {
-       return ordersRepository.getAmountByUserIdAndProductId(customerId,productId);
+        return ordersRepository.getAmountByUserIdAndProductId(customerId, productId);
     }
 }

@@ -38,13 +38,8 @@ public class OrdersController {
             }
             UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
             User user = details.getUser();
-            List<Product> orders = orderService.findOrders(user.getId());
-            Map<String,Long> order = new HashMap<>();
-            String name;
-            for(Product product : orders){
-                name = product.getName();
-                order.put(name,orderService.getAmount(user.getId(),product.getId()));
-            }
+            Order order = orderService.findOrders(user.getId());
+            System.out.println(order);
             modelMap.addAttribute("ordersFromServer", order);
             return "orders";
         }
