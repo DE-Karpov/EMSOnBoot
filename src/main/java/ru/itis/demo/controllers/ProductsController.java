@@ -54,7 +54,7 @@ public class ProductsController {
                         .productId(product.getId())
                         .status("Delievering")
                         .build();
-                orderService.addOrder(order);
+                orderService.addOrder(order,product,user);
             }
             user.getCart().getProducts().clear();
             productService.deleteProductsFromCart(user.getCart().getId());

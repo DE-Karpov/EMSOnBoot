@@ -40,8 +40,16 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void addOrder(Order order) {
-        ordersRepository.save(order);
+    public void addOrder(Order order,Product product, User user) {
+        Long cartAmount = productsRepository.getAmount(user.getCart().getId(), product.getId());
+        Long orderAmount = ordersRepository.getAmountByUserIdAndProductId(user.getId(), product.getId());
+        if (orderAmount == null) {
+            ordersRepository.save(order);
+        }
+        else {
+            ordersRepository.updateAmount(user.getId(), product.getId(), orderAmount + cartAmount);
+        }
+
     }
 
     @Override
