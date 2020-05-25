@@ -9,8 +9,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.util.function.Predicate;
-
 @SpringBootApplication
 @ComponentScan(basePackages = "ru.itis.demo")
 @EnableJpaRepositories(basePackages = "ru.itis.demo.repositories")

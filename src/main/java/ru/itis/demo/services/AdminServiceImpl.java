@@ -22,7 +22,7 @@ public class AdminServiceImpl implements AdminService {
         else
             state = State.ACTIVE.toString();
 
-        adminRepository.changeState(id,state);
+        adminRepository.changeState(id, state);
     }
 
     @Override

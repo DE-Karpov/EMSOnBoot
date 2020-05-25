@@ -51,7 +51,7 @@
     </div>
 </nav>
 
-<form  method="post" action="/signUp">
+<form method="post" action="/signUp">
     <h1 style="color: white; text-align: center">Sign Up</h1>
     <div class="NameInput">
         <label>Name and Surname</label>
@@ -63,7 +63,8 @@
     </div>
     <div>
         <label>Password</label>
-        <input type="password" placeholder="Password" name="password" id="password">
+        <input type=" password" placeholder="Password" name="password" id="password">
+
     </div>
     <div class="AgeInput">
         <label>Age</label>

@@ -33,7 +33,7 @@ public class OrdersController {
         if (authentication == null) {
             return "redirect:/login";
         } else {
-            if(authentication.getAuthorities().contains(new SimpleGrantedAuthority(Role.ADMIN.name()))) {
+            if (authentication.getAuthorities().contains(new SimpleGrantedAuthority(Role.ADMIN.name()))) {
                 modelMap.addAttribute("admin", true);
             }
             UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();

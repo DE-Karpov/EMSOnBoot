@@ -306,21 +306,25 @@ a:hover, a:focus {
 .list-unstyled {
     color: white;
 }
-.list-unstyled li{
- margin-bottom: 10%;
+
+.list-unstyled li {
+    margin-bottom: 10%;
     margin-left: 10%;
 }
-.list-unstyled h5{
+
+.list-unstyled h5 {
     font-family: 'Montserrat', sans-serif;
     padding-left: 10%;
     font-weight: normal;
 
 }
-.media-body{
+
+.media-body {
     font-family: 'Montserrat', sans-serif;
     padding-left: 10%;
 }
-.list-unstyled h4{
+
+.list-unstyled h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     padding-left: 10%;

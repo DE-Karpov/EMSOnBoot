@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder()
+@Builder
 @Entity
 @Table(name = "product")
 @ToString(exclude = "listOfCarts")

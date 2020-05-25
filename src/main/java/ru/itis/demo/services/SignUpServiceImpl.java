@@ -44,8 +44,7 @@ public class SignUpServiceImpl implements SignUpService {
 
         if (usersRepository.findByLogin(user.getLogin()).isPresent()) {
             cartsRepository.save(usersRepository.findByLogin(user.getLogin()).get().getId());
-        }
-        else {
+        } else {
             throw new IllegalArgumentException();
         }
     }

@@ -38,7 +38,7 @@ public class Cart {
         products.add(product);
     }
 
-    public void remove(Product product){
+    public void remove(Product product) {
         products.remove(product);
     }
 

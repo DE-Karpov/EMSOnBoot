@@ -19,8 +19,8 @@ public class AdminController {
 
 
     @PostMapping("users/changeState")
-    public String changeState(Authentication authentication, @RequestParam Long id, @RequestParam String state){
-        if (authentication != null){
+    public String changeState(Authentication authentication, @RequestParam Long id, @RequestParam String state) {
+        if (authentication != null) {
             adminService.changeState(id, state);
         }
         return "users";

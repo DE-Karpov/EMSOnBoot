@@ -3,7 +3,7 @@ function getAmount(name) {
     $.ajax({
         type: 'GET',
         url: '/products/getAmount',
-        async : false,
+        async: false,
         data: {
             name: name,
         },

@@ -15,11 +15,11 @@
             <#if user.role.toString() != "ADMIN">
             <button class="btn btn-warning" onclick="banUser(${user.id}, '${user.state.toString()}')">
                 <#assign u = user.state.toString()>
-                    <#if u == "ACTIVE">
-                        BAN
-                    <#else>
-                        RESTORE
-                    </#if>
+                <#if u == "ACTIVE">
+                    BAN
+                <#else>
+                    RESTORE
+                </#if>
                 </#if>
             </button>
         </p>

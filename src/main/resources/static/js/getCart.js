@@ -3,10 +3,9 @@ function getCart() {
         type: 'GET',
         url: '/products/list',
         success: function (data) {
-            if(data.length === 0){
+            if (data.length === 0) {
                 $("#goods_table").html("Cart is empty");
-            }
-            else {
+            } else {
                 var tableHtml = "";
                 tableHtml += '<table style="border-collapse: separate; border-spacing: 10px 0;">';
                 tableHtml +=
@@ -27,9 +26,9 @@ function getCart() {
                 }
 
                 tableHtml += '</table>';
-            tableHtml+= '<form method="post" action="/products">';
-                tableHtml+= '<button class="btn btn-warning" type="submit">Submit</button>';
-                tableHtml+= '</form>';
+                tableHtml += '<form method="post" action="/products">';
+                tableHtml += '<button class="btn btn-warning" type="submit">Submit</button>';
+                tableHtml += '</form>';
                 $("#goods_table").html(tableHtml);
             }
         }

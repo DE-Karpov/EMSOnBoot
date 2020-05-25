@@ -1,9 +1,6 @@
 package ru.itis.demo.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
@@ -24,9 +21,7 @@ public class Order {
 
     @Column(name = "product_id")
     private Long productId;
-//    @ManyToOne
-//    @JoinColumn(name = "address_id")
-//    private Address address;
+
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private User user;

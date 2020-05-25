@@ -10,7 +10,7 @@ import java.util.Set;
 
 public interface UserService {
 
-    void saveUser(User user,Product product);
+    void saveUser(User user, Product product);
 
     Optional<User> findByLogin(String login);
 

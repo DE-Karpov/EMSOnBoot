@@ -32,8 +32,8 @@ public class ProductServiceImpl implements ProductService {
             counter--;
             productsRepository.updateAmount(counter, user.getCart().getId(), product.getId());
         }
-        for (Product product1 : user.getCart().getProducts()){
-            if (product1.getName().equals(product.getName())){
+        for (Product product1 : user.getCart().getProducts()) {
+            if (product1.getName().equals(product.getName())) {
                 user.getCart().remove(product1);
                 break;
             }

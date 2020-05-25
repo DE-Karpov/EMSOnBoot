@@ -26,8 +26,7 @@ public class OrderServiceImpl implements OrderService {
         Order allOrder;
         try {
             allOrder = orders.get(0);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             allOrder = null;
             System.out.println(")");
         }
@@ -40,13 +39,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void addOrder(Order order,Product product, User user) {
+    public void addOrder(Order order, Product product, User user) {
         Long cartAmount = productsRepository.getAmount(user.getCart().getId(), product.getId());
         Long orderAmount = ordersRepository.getAmountByUserIdAndProductId(user.getId(), product.getId());
         if (orderAmount == null) {
             ordersRepository.save(order);
-        }
-        else {
+        } else {
             ordersRepository.updateAmount(user.getId(), product.getId(), orderAmount + cartAmount);
         }
 

@@ -33,7 +33,7 @@ public class ProductsController {
     @GetMapping("/products")
     public String getProductsPage(Authentication authentication, ModelMap modelMap) {
         if (authentication != null) {
-            if(authentication.getAuthorities().contains(new SimpleGrantedAuthority(Role.ADMIN.name()))){
+            if (authentication.getAuthorities().contains(new SimpleGrantedAuthority(Role.ADMIN.name()))) {
                 modelMap.addAttribute("admin", true);
             }
             modelMap.addAttribute("header", true);
@@ -47,17 +47,17 @@ public class ProductsController {
         User user = details.getUser();
         Cart cart = cartsRepository.findCartById(user.getCart().getId()).get();
         List<Product> productList = cart.getProducts();
-            for (Product product : productList) {
-                Order order = Order.builder()
-                        .user(user)
-                        .amount(productService.getAmount(user.getCart().getId(),product.getName()))
-                        .productId(product.getId())
-                        .status("Delievering")
-                        .build();
-                orderService.addOrder(order,product,user);
-            }
-            user.getCart().getProducts().clear();
-            productService.deleteProductsFromCart(user.getCart().getId());
-            return "redirect:/profile";
+        for (Product product : productList) {
+            Order order = Order.builder()
+                    .user(user)
+                    .amount(productService.getAmount(user.getCart().getId(), product.getName()))
+                    .productId(product.getId())
+                    .status("Delievering")
+                    .build();
+            orderService.addOrder(order, product, user);
+        }
+        user.getCart().getProducts().clear();
+        productService.deleteProductsFromCart(user.getCart().getId());
+        return "redirect:/orders";
     }
 }
